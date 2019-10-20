@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Preloader from '../layout/Preloader'
 import TaskItem from '../tasks/TaskItem'
 
 const Tasks = () => {
@@ -21,7 +22,7 @@ const Tasks = () => {
   return (
     <div>
       {loading ? (
-        <p>Loading...</p>
+        <Preloader></Preloader>
       ) : (
         <ul className='collection with-header'>
           <li className='collection-header'>
