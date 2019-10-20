@@ -10,7 +10,7 @@
     {
       "id": 2,
       "message": "Network down on workstation 021",
-      "attention": false,
+      "attention": true,
       "date": "03-02-2019",
       "support": "Carson Palmer"
     },
