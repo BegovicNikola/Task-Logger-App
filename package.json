@@ -9,6 +9,7 @@
     "json-server": "^0.15.1",
     "materialize-css": "^1.0.0-rc.2",
     "moment": "^2.24.0",
+    "prettier": "^1.19.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-moment": "^0.9.6",
@@ -19,6 +20,8 @@
     "start": "react-scripts start",
     "json-server": "json-server --watch db.json --port 5000",
     "dev": "concurrently \"yarn run start\" \"yarn run json-server\"",
+    "format": "prettier --write \"src/**/*.{js, jsx, css, json} \"",
+    "format:check": "prettier --list:different \"src/**/*.{js, jsx, css, json} \"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

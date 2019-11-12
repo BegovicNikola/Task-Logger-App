@@ -24,9 +24,9 @@ const Tasks = () => {
       {loading ? (
         <Preloader></Preloader>
       ) : (
-        <ul className='collection with-header'>
-          <li className='collection-header'>
-            <h1 className='center'>Items</h1>
+        <ul className="collection with-header">
+          <li className="collection-header">
+            <h1 className="center">Items</h1>
           </li>
           {!loading && tasks.length === 0 ? (
             <li>No items</li>
