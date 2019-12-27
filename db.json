@@ -1,13 +1,6 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "message": "Changed hard drive on workstation 001",
-      "attention": false,
-      "date": "05-11-2019",
-      "support": "Sam Smith"
-    },
-    {
       "id": 2,
       "message": "Network down on workstation 021",
       "attention": true,
@@ -20,6 +13,13 @@
       "attention": false,
       "date": "03-02-2019",
       "support": "John Doe"
+    },
+    {
+      "message": "Testing development environment",
+      "attention": true,
+      "support": "John Doe",
+      "date": "2019-12-26T14:54:09.977Z",
+      "id": 4
     }
   ],
   "support": [
