@@ -1,16 +1,29 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { addTask } from '../../store/actions/taskActions'
 import M from 'materialize-css/dist/js/materialize.min.js'
 
-const AddTaskModal = () => {
+const AddTaskModal = ({ addTask }) => {
   const [message, setMessage] = useState('')
   const [attention, setAttention] = useState(false)
   const [support, setSupport] = useState('')
 
-  const submit = () => {
+  const onSubmit = () => {
     if (message === '' || support === '') {
       M.toast({ html: 'Please enter a message and support' })
     } else {
-      console.log(message, support, attention)
+      const newTask = {
+        message,
+        attention,
+        support,
+        date: new Date()
+      }
+
+      addTask(newTask)
+
+      M.toast({ html: `Log added by ${support}` })
+
       setMessage('')
       setSupport('')
       setAttention(false)
@@ -70,7 +83,7 @@ const AddTaskModal = () => {
       <div className="modal-footer">
         <a
           href="#!"
-          onClick={submit}
+          onClick={onSubmit}
           className="modal-close waves-effect blue btn"
         >
           Submit
@@ -80,4 +93,8 @@ const AddTaskModal = () => {
   )
 }
 
-export default AddTaskModal
+AddTaskModal.propTypes = {
+  addTask: PropTypes.func.isRequired
+}
+
+export default connect(null, { addTask })(AddTaskModal)
